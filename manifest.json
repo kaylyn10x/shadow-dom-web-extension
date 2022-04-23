@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Shadow DOM Inspector",
+  "version": "0.0.1",
+  "icons": {
+    "128": "src/assets/icons/icon.png"
+  },
+  "description": "Force shadow roots open & inspect Shadow DOM structure.",
+  "permissions": ["storage"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "js": ["src/main.tsx"],
+      "run_at": "document_start",
+      "all_frames": true,
+      "matches": ["http://*/*", "https://*/*"]
+    }
+  ]
+}
